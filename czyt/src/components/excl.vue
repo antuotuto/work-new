@@ -1,130 +1,72 @@
 <template>
-<!--  -->
+<!-- 按钮功能表格  -->
 <div class="excl">
-  <el-table
-      :data="tableData"
-      border
-      style="width: 100%">
-      <el-table-column
-        fixed
-        prop="date"
-        label="日期"
-        width="150">
-      </el-table-column>
-      <el-table-column
-        prop="name"
-        label="姓名"
-        width="120">
-      </el-table-column>
-      <el-table-column
-        prop="province"
-        label="省份"
-        width="120">
-      </el-table-column>
-      <el-table-column
-        prop="city"
-        label="市区"
-        width="120">
-      </el-table-column>
-      <el-table-column
-        prop="address"
-        label="地址"
-        width="300">
-      </el-table-column>
-      <el-table-column
-        prop="zip"
-        label="邮编"
-        width="120">
-      </el-table-column>
-      <el-table-column
-        fixed="right"
-        label="操作"
-        width="100">
-        <template scope="scope">
-          <el-button @click="handleClick" type="text" size="small">查看</el-button>
-          <el-button type="text" size="small">编辑</el-button>
-        </template>
-      </el-table-column>
-    </el-table>
+  <el-table :data="tableData" stripe tooltip-effect="dark" style="width: 100%" @selection-change="">
+    <el-table-column type="selection" width="55">
+    </el-table-column>
+    <el-table-column width="90" label="序号" align="left" @click.native="test(row)">
+      <template scope="scope">
+        wangan
+            </template>
+    </el-table-column>
+    <el-table-column width="" prop="" label="位置" align="left">
+      <template scope="scope">
+        就是这样的
+            </template>
+    </el-table-column>
+    <el-table-column width="" prop="" label="申请情况" align="center">
+      <template scope="scope">
+        确认
+            </template>
+    </el-table-column>
+    <el-table-column width="" label="姓名" prop="admin" align="center">
+    </el-table-column>
+    <el-table-column width="" label="年龄" prop="city" align="center">
+    </el-table-column>
+    <el-table-column width="" label="距离" prop="" align="center">
+      <template scope="scope">{{ scope.row.date }}</template>
+    </el-table-column>
+    <el-table-column width="" label="喜欢" prop="" align="center">
+      <template scope="scope">{{ scope.row.status }}</template>
+    </el-table-column>
+    </el-table-column>
+    <el-table-column label="操作" width="140" align="center">
+      <template scope="scope">
+     <el-button
+       size="small"
+       @click="handleEdit(scope.$index, scope.row)">查看</el-button>
+     <el-button
+       size="small"
+       type="primary"
+       @click="handleDelete(scope.$index, scope.row)">编辑</el-button>
+   </template>
+    </el-table-column>
+  </el-table>
 </div>
 <!--  -->
 </template>
 
 <script>
+import {
+  table
+} from '~/data';
+
 export default {
-    components: {},
-    data() {
-        return {
-          tableData: [{
-            date: '2016-05-03',
-            name: '王小虎',
-            province: '上海',
-            city: '普陀区',
-            address: '上海市普陀区金沙江路 1518 弄',
-            zip: 200333
-          }, {
-            date: '2016-05-02',
-            name: '王小虎',
-            province: '上海',
-            city: '普陀区',
-            address: '上海市普陀区金沙江路 1518 弄',
-            zip: 200333
-          }, {
-            date: '2016-05-04',
-            name: '王小虎',
-            province: '上海',
-            city: '普陀区',
-            address: '上海市普陀区金沙江路 1518 弄',
-            zip: 200333
-          }, {
-            date: '2016-05-04',
-            name: '王小虎',
-            province: '上海',
-            city: '普陀区',
-            address: '上海市普陀区金沙江路 1518 弄',
-            zip: 200333
-          },{
-            date: '2016-05-04',
-            name: '王小虎',
-            province: '上海',
-            city: '普陀区',
-            address: '上海市普陀区金沙江路 1518 弄',
-            zip: 200333
-          },{
-            date: '2016-05-04',
-            name: '王小虎',
-            province: '上海',
-            city: '普陀区',
-            address: '上海市普陀区金沙江路 1518 弄',
-            zip: 200333
-          },{
-            date: '2016-05-04',
-            name: '王小虎',
-            province: '上海',
-            city: '普陀区',
-            address: '上海市普陀区金沙江路 1518 弄',
-            zip: 200333
-          },{
-            date: '2016-05-01',
-            name: '王小虎',
-            province: '上海',
-            city: '普陀区',
-            address: '上海市普陀区金沙江路 1518 弄',
-            zip: 200333
-          }]
-        }
-    },
-    watch: {},
-    methods: {
-      handleClick() {
-        console.log(1);
-      }
-    },
-    directives: {},
-    created() {
-    },
-    mounted() {
+  components: {},
+  data() {
+    return {
+      tableData: table,
     }
+  },
+  methods: {
+
+    handleEdit(index, row) {
+      console.log(index, row);
+    },
+    handleDelete(index, row) {
+      console.log(index, row);
+    }
+  }
 }
 </script>
 

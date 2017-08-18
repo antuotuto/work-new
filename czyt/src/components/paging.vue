@@ -1,8 +1,17 @@
 <template>
 <!--  -->
 <div class="paging">
-  <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage4" :page-sizes="[100, 200, 300, 400]" :page-size="100" layout="total, sizes, prev, pager, next, jumper" :total="400">
-  </el-pagination>
+
+  <el-row :gutter="20">
+    <el-col :span="6">
+      <el-button type="danger" icon="delete">删除</el-button>
+    </el-col>
+    <el-col :span="18" class="content-paging">
+      <el-pagination class="pagination" :small="true" @size-change="" @current-change="" :current-page="2" :page-size="10" layout="total, prev, pager, next, jumper" :total="100">
+      </el-pagination>
+    </el-col>
+  </el-row>
+
 </div>
 <!--  -->
 </template>
@@ -33,9 +42,11 @@ export default {
 </script>
 
 <style scoped>
-.paging{
-  text-align: center;
+.paging {
   margin: 15px 0;
 }
 
+.content-paging {
+  text-align: right;
+}
 </style>

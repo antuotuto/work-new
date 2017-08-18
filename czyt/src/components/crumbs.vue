@@ -25,6 +25,12 @@ export default {
 
 <style scoped>
   .crumbs{
-    margin: 15px 0;
+    padding: 15px ;
+    background: #fff;
+    margin-bottom: 10px;
   }
+
+
+
+
 </style>

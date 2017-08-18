@@ -1,1 +1,2 @@
-export {javascript1} from './javascript1';
+export {items} from './items';
+export {table} from './table';

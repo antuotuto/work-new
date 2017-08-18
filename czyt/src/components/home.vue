@@ -3,6 +3,7 @@
   <div class="home-left">
     <leftMenu></leftMenu>
   </div>
+
   <div class="home-right">
     <router-view></router-view>
   </div>
@@ -33,6 +34,7 @@ export default {
 <style scoped lang="scss">
 .home {
     height: 100%;
+    overflow: hidden;
 }
 .home-left {
     float: left;
@@ -42,7 +44,9 @@ export default {
 }
 .home-right {
     overflow: hidden;
-    padding: 15px;
+    height: 100%;
+    padding: 15px 0 15px 15px;
+    box-sizing: border-box;
 }
 
 ::-webkit-scrollbar-track-piece {
